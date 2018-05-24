@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!--Caracteres-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <!-- Bootstrap para grid web -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- Font Awesome -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <!-- Estilos local-->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Google Fuente Comfortaa y Merriweather-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+        <!-- Google Fuente Serif -->
+        <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+        <!-- Cloudflare Animate-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+        <!--slide-->
+        <link rel="stylesheet" href="css/slide.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!--Vincular los iconos-->
+        <link rel="stylesheet" href="css/fontello.css">
+        <link rel="stylesheet" href="css/fontello1.css">
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js">
+
+        </script>
+
+        <title>Mis_Quince</title>
+
+        <!--Animaciones en cloudflare-->
+
+        <script>
+        (function() {
+          var MutationObserver, Util, WeakMap, getComputedStyle, getComputedStyleRX,
+          bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+          indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+
+          Util = (function() {
+          function Util() {}
+
+          Util.prototype.extend = function(custom, defaults) {
+            var key, value;
+            for (key in defaults) {
+              value = defaults[key];
+              if (custom[key] == null) {
+              custom[key] = value;
+              }
+            }
+          return custom;
+          };
+
+          Util.prototype.isMobile = function(agent) {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(agent);
+          };
+
+          Util.prototype.createEvent = function(event, bubble, cancel, detail) {
+              var customEvent;
+              if (bubble == null) {
+                bubble = false;
+              }
+            if (cancel == null) {
+              cancel = false;
+            }
+            if (detail == null) {
+              detail = null;
+            }
+            if (document.createEvent != null) {
+              customEvent = document.createEvent('CustomEvent');
+              customEvent.initCustomEvent(event, bubble, cancel, detail);
+            }
+            else if (document.createEventObject != null) {
+              customEvent = document.createEventObject();
+              customEvent.eventType = event;
+            }
+            else {
+              customEvent.eventName = event;
+            }
+            return customEvent;
+          };
+
+          Util.prototype.emitEvent = function(elem, event) {
+            if (elem.dispatchEvent != null) {
+              return elem.dispatchEvent(event);
+            } else if (event in (elem != null)) {
+                return elem[event]();
+              } else if (("on" + event) in (elem != null)) {
+                return elem["on" + event]();
+                }
+          };
+
+          Util.prototype.addEvent = function(elem, event, fn) {
+            if (elem.addEventListener != null) {
+              return elem.addEventListener(event, fn, false);
+            } else if (elem.attachEvent != null) {
+                return elem.attachEvent("on" + event, fn);
+              } else {
+                return elem[event] = fn;
+                }
+          };
+
+  Util.prototype.removeEvent = function(elem, event, fn) {
+    if (elem.removeEventListener != null) {
+      return elem.removeEventListener(event, fn, false);
+    } else if (elem.detachEvent != null) {
+      return elem.detachEvent("on" + event, fn);
+    } else {
+      return delete elem[event];
+    }
+  };
+
+  Util.prototype.innerHeight = function() {
+    if ('innerHeight' in window) {
+      return window.innerHeight;
+    } else {
+      return document.documentElement.clientHeight;
+    }
+  };
+
+  return Util;
+
+})();
+
+WeakMap = this.WeakMap || this.MozWeakMap || (WeakMap = (function() {
+  function WeakMap() {
+    this.keys = [];
+    this.values = [];
+  }
+
+  WeakMap.prototype.get = function(key) {
+    var i, item, j, len, ref;
+    ref = this.keys;
+    for (i = j = 0, len = ref.length; j < len; i = ++j) {
+      item = ref[i];
+      if (item === key) {
+        return this.values[i];
+      }
+    }
+  };
+
+  WeakMap.prototype.set = function(key, value) {
+    var i, item, j, len, ref;
+    ref = this.keys;
+    for (i = j = 0, len = ref.length; j < len; i = ++j) {
+      item = ref[i];
+      if (item === key) {
+        this.values[i] = value;
+        return;
+      }
+    }
+    this.keys.push(key);
+    return this.values.push(value);
+  };
+
+  return WeakMap;
+
+})());
+
+MutationObserver = this.MutationObserver || this.WebkitMutationObserver || this.MozMutationObserver || (MutationObserver = (function() {
+  function MutationObserver() {
+    if (typeof console !== "undefined" && console !== null) {
+      console.warn('MutationObserver is not supported by your browser.');
+    }
+    if (typeof console !== "undefined" && console !== null) {
+      console.warn('WOW.js cannot detect dom mutations, please call .sync() after loading new content.');
+    }
+  }
+
+  MutationObserver.notSupported = true;
+
+  MutationObserver.prototype.observe = function() {};
+
+  return MutationObserver;
+
+})());
+
+getComputedStyle = this.getComputedStyle || function(el, pseudo) {
+  this.getPropertyValue = function(prop) {
+    var ref;
+    if (prop === 'float') {
+      prop = 'styleFloat';
+    }
+    if (getComputedStyleRX.test(prop)) {
+      prop.replace(getComputedStyleRX, function(_, _char) {
+        return _char.toUpperCase();
+      });
+    }
+    return ((ref = el.currentStyle) != null ? ref[prop] : void 0) || null;
+  };
+  return this;
+};
+
+getComputedStyleRX = /(\-([a-z]){1})/g;
+
+this.WOW = (function() {
+  WOW.prototype.defaults = {
+    boxClass: 'wow',
+    animateClass: 'animated',
+    offset: 0,
+    mobile: true,
+    live: true,
+    callback: null
+  };
+
+  function WOW(options) {
+    if (options == null) {
+      options = {};
+    }
+    this.scrollCallback = bind(this.scrollCallback, this);
+    this.scrollHandler = bind(this.scrollHandler, this);
+    this.resetAnimation = bind(this.resetAnimation, this);
+    this.start = bind(this.start, this);
+    this.scrolled = true;
+    this.config = this.util().extend(options, this.defaults);
+    this.animationNameCache = new WeakMap();
+    this.wowEvent = this.util().createEvent(this.config.boxClass);
+  }
+
+  WOW.prototype.init = function() {
+    var ref;
+    this.element = window.document.documentElement;
+    if ((ref = document.readyState) === "interactive" || ref === "complete") {
+      this.start();
+    } else {
+      this.util().addEvent(document, 'DOMContentLoaded', this.start);
+    }
+    return this.finished = [];
+  };
+
+  WOW.prototype.start = function() {
+    var box, j, len, ref;
+    this.stopped = false;
+    this.boxes = (function() {
+      var j, len, ref, results;
+      ref = this.element.querySelectorAll("." + this.config.boxClass);
+      results = [];
+      for (j = 0, len = ref.length; j < len; j++) {
+        box = ref[j];
+        results.push(box);
+      }
+      return results;
+    }).call(this);
+    this.all = (function() {
+      var j, len, ref, results;
+      ref = this.boxes;
+      results = [];
+      for (j = 0, len = ref.length; j < len; j++) {
+        box = ref[j];
+        results.push(box);
+      }
+      return results;
+    }).call(this);
+    if (this.boxes.length) {
+      if (this.disabled()) {
+        this.resetStyle();
+      } else {
+        ref = this.boxes;
+        for (j = 0, len = ref.length; j < len; j++) {
+          box = ref[j];
+          this.applyStyle(box, true);
+        }
+      }
+    }
+    if (!this.disabled()) {
+      this.util().addEvent(window, 'scroll', this.scrollHandler);
+      this.util().addEvent(window, 'resize', this.scrollHandler);
+      this.interval = setInterval(this.scrollCallback, 50);
+    }
+    if (this.config.live) {
+      return new MutationObserver((function(_this) {
+        return function(records) {
+          var k, len1, node, record, results;
+          results = [];
+          for (k = 0, len1 = records.length; k < len1; k++) {
+            record = records[k];
+            results.push((function() {
+              var l, len2, ref1, results1;
+              ref1 = record.addedNodes || [];
+              results1 = [];
+              for (l = 0, len2 = ref1.length; l < len2; l++) {
+                node = ref1[l];
+                results1.push(this.doSync(node));
+              }
+              return results1;
+            }).call(_this));
+          }
+          return results;
+        };
+      })(this)).observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    }
+  };
+
+  WOW.prototype.stop = function() {
+    this.stopped = true;
+    this.util().removeEvent(window, 'scroll', this.scrollHandler);
+    this.util().removeEvent(window, 'resize', this.scrollHandler);
+    if (this.interval != null) {
+      return clearInterval(this.interval);
+    }
+  };
+
+  WOW.prototype.sync = function(element) {
+    if (MutationObserver.notSupported) {
+      return this.doSync(this.element);
+    }
+  };
+
+  WOW.prototype.doSync = function(element) {
+    var box, j, len, ref, results;
+    if (element == null) {
+      element = this.element;
+    }
+    if (element.nodeType !== 1) {
+      return;
+    }
+    element = element.parentNode || element;
+    ref = element.querySelectorAll("." + this.config.boxClass);
+    results = [];
+    for (j = 0, len = ref.length; j < len; j++) {
+      box = ref[j];
+      if (indexOf.call(this.all, box) < 0) {
+        this.boxes.push(box);
+        this.all.push(box);
+        if (this.stopped || this.disabled()) {
+          this.resetStyle();
+        } else {
+          this.applyStyle(box, true);
+        }
+        results.push(this.scrolled = true);
+      } else {
+        results.push(void 0);
+      }
+    }
+    return results;
+  };
+
+  WOW.prototype.show = function(box) {
+    this.applyStyle(box);
+    box.className = box.className + " " + this.config.animateClass;
+    if (this.config.callback != null) {
+      this.config.callback(box);
+    }
+    this.util().emitEvent(box, this.wowEvent);
+    this.util().addEvent(box, 'animationend', this.resetAnimation);
+    this.util().addEvent(box, 'oanimationend', this.resetAnimation);
+    this.util().addEvent(box, 'webkitAnimationEnd', this.resetAnimation);
+    this.util().addEvent(box, 'MSAnimationEnd', this.resetAnimation);
+    return box;
+  };
+
+  WOW.prototype.applyStyle = function(box, hidden) {
+    var delay, duration, iteration;
+    duration = box.getAttribute('data-wow-duration');
+    delay = box.getAttribute('data-wow-delay');
+    iteration = box.getAttribute('data-wow-iteration');
+    return this.animate((function(_this) {
+      return function() {
+        return _this.customStyle(box, hidden, duration, delay, iteration);
+      };
+    })(this));
+  };
+
+  WOW.prototype.animate = (function() {
+    if ('requestAnimationFrame' in window) {
+      return function(callback) {
+        return window.requestAnimationFrame(callback);
+      };
+    } else {
+      return function(callback) {
+        return callback();
+      };
+    }
+  })();
+
+  WOW.prototype.resetStyle = function() {
+    var box, j, len, ref, results;
+    ref = this.boxes;
+    results = [];
+    for (j = 0, len = ref.length; j < len; j++) {
+      box = ref[j];
+      results.push(box.style.visibility = 'visible');
+    }
+    return results;
+  };
+
+  WOW.prototype.resetAnimation = function(event) {
+    var target;
+    if (event.type.toLowerCase().indexOf('animationend') >= 0) {
+      target = event.target || event.srcElement;
+      return target.className = target.className.replace(this.config.animateClass, '').trim();
+    }
+  };
+
+  WOW.prototype.customStyle = function(box, hidden, duration, delay, iteration) {
+    if (hidden) {
+      this.cacheAnimationName(box);
+    }
+    box.style.visibility = hidden ? 'hidden' : 'visible';
+    if (duration) {
+      this.vendorSet(box.style, {
+        animationDuration: duration
+      });
+    }
+    if (delay) {
+      this.vendorSet(box.style, {
+        animationDelay: delay
+      });
+    }
+    if (iteration) {
+      this.vendorSet(box.style, {
+        animationIterationCount: iteration
+      });
+    }
+    this.vendorSet(box.style, {
+      animationName: hidden ? 'none' : this.cachedAnimationName(box)
+    });
+    return box;
+  };
+
+  WOW.prototype.vendors = ["moz", "webkit"];
+
+  WOW.prototype.vendorSet = function(elem, properties) {
+    var name, results, value, vendor;
+    results = [];
+    for (name in properties) {
+      value = properties[name];
+      elem["" + name] = value;
+      results.push((function() {
+        var j, len, ref, results1;
+        ref = this.vendors;
+        results1 = [];
+        for (j = 0, len = ref.length; j < len; j++) {
+          vendor = ref[j];
+          results1.push(elem["" + vendor + (name.charAt(0).toUpperCase()) + (name.substr(1))] = value);
+        }
+        return results1;
+      }).call(this));
+    }
+    return results;
+  };
+
+  WOW.prototype.vendorCSS = function(elem, property) {
+    var j, len, ref, result, style, vendor;
+    style = getComputedStyle(elem);
+    result = style.getPropertyCSSValue(property);
+    ref = this.vendors;
+    for (j = 0, len = ref.length; j < len; j++) {
+      vendor = ref[j];
+      result = result || style.getPropertyCSSValue("-" + vendor + "-" + property);
+    }
+    return result;
+  };
+
+  WOW.prototype.animationName = function(box) {
+    var animationName;
+    try {
+      animationName = this.vendorCSS(box, 'animation-name').cssText;
+    } catch (_error) {
+      animationName = getComputedStyle(box).getPropertyValue('animation-name');
+    }
+    if (animationName === 'none') {
+      return '';
+    } else {
+      return animationName;
+    }
+  };
+
+  WOW.prototype.cacheAnimationName = function(box) {
+    return this.animationNameCache.set(box, this.animationName(box));
+  };
+
+  WOW.prototype.cachedAnimationName = function(box) {
+    return this.animationNameCache.get(box);
+  };
+
+  WOW.prototype.scrollHandler = function() {
+    return this.scrolled = true;
+  };
+
+  WOW.prototype.scrollCallback = function() {
+    var box;
+    if (this.scrolled) {
+      this.scrolled = false;
+      this.boxes = (function() {
+        var j, len, ref, results;
+        ref = this.boxes;
+        results = [];
+        for (j = 0, len = ref.length; j < len; j++) {
+          box = ref[j];
+          if (!(box)) {
+            continue;
+          }
+          if (this.isVisible(box)) {
+            this.show(box);
+            continue;
+          }
+          results.push(box);
+        }
+        return results;
+      }).call(this);
+      if (!(this.boxes.length || this.config.live)) {
+        return this.stop();
+      }
+    }
+  };
+
+  WOW.prototype.offsetTop = function(element) {
+    var top;
+    while (element.offsetTop === void 0) {
+      element = element.parentNode;
+    }
+    top = element.offsetTop;
+    while (element = element.offsetParent) {
+      top += element.offsetTop;
+    }
+    return top;
+  };
+
+  WOW.prototype.isVisible = function(box) {
+    var bottom, offset, top, viewBottom, viewTop;
+    offset = box.getAttribute('data-wow-offset') || this.config.offset;
+    viewTop = window.pageYOffset;
+    viewBottom = viewTop + Math.min(this.element.clientHeight, this.util().innerHeight()) - offset;
+    top = this.offsetTop(box);
+    bottom = top + box.clientHeight;
+    return top <= viewBottom && bottom >= viewTop;
+  };
+
+  WOW.prototype.util = function() {
+    return this._util != null ? this._util : this._util = new Util();
+  };
+
+  WOW.prototype.disabled = function() {
+    return !this.config.mobile && this.util().isMobile(navigator.userAgent);
+  };
+
+  return WOW;
+
+})();
+
+}).call(this);
+        </script>
+<!--Fin de cloudflare en animaciones-->
+
+      <!-- activacion del wow-->
+        <script>
+            new WOW().init();
+        </script>
+        <script>
+        $(document).ready(function(){
+            var percent = 0,
+            interval = 30,//it takes about 6s, interval=20 takes about 4s
+            $bar = $('.transition-timer-carousel-progress-bar'),
+            $crsl = $('#myCarousel');
+            $('.carousel-indicators li, .carousel-control').click(function (){$bar.css({width:0.5+'%'});});
+            /*line above just for showing when controls are clicked the bar goes to 0.5% to make more friendly,
+            if you want when clicked set bar empty, change on width:0.5 to width:0*/
+            $crsl.carousel({//initialize
+            interval: false,
+            pause: true
+            }).on('slide.bs.carousel', function (){percent = 0;});//This event fires immediately when the bootstrap slide instance method is invoked.
+            function progressBarCarousel() {
+            $bar.css({width:percent+'%'});
+            percent = percent +0.5;
+            if (percent>=100) {
+            percent=0;
+            $crsl.carousel('next');
+             }
+            }
+            var barInterval = setInterval(progressBarCarousel, interval);//set interval to progressBarCarousel function
+              if (!(/Mobi/.test(navigator.userAgent))) {//tests if it isn't mobile
+              $crsl.hover(function(){
+                clearInterval(barInterval);
+              },
+              function(){
+                barInterval = setInterval(progressBarCarousel, interval);
+              }
+              );
+              }
+              });
+
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+
+
+      <div class="logosu1">
+        <img class="logosu" width="250" height="80" src="logosu.png" alt="">
+      </div>
+
+      <input type="checkbox" id="btn-menu">
+      <label for="btn-menu" class="icon-menu"></label>
+
+      <ul id="menu_1">
+
+          <li><a href="#" class="drop">LO NUEVO</a>
+            <!-- Begin Home Item -->
+          </li><!-- End Home Item -->
+
+          <li class="submenu"><a href="#" class="drop">LA FIESTA<span class="icon-down-open"></span></a><!-- Begin 5 columns Item -->
+
+              <div class="dropdown_42columns"><!-- Begin 4 columns container -->
+                    <div class="col_1">
+                        <ul>
+                            <li><a href="#">Mi Presupuesto</a></li>
+                            <hr/>
+                            <li><a href="#">Mis Invitados</a></li>
+                            <hr/>
+                            <li><a href="#">Mis Invitaciones</a></li>
+                            <hr/>
+                            <li><a href="#">Mis Proveedores</a></li>
+                                <!--  <li><a href="#"></a></li> -->
+                        </ul>
+
+                      </div>
+
+              </div><!-- End 4 columns container -->
+
+          </li><!-- End 5 columns Item -->
+
+          <li class="submenu"><a href="#" class="drop">BELLEZA<span class="icon-down-open"></span></a><!-- Begin 4 columns Item -->
+
+              <div class="dropdown_4columns"><!-- Begin 4 columns container -->
+                <div class="col_1">
+                  <ul>
+                      <li><a href="#">Mis Peinados</a></li>
+                      <hr/>
+                      <li><a href="#">Mis Vestidos</a></li>
+                      <hr/>
+                      <li><a href="#">Mis Zapatos</a></li>
+                    <!--  <li><a href="#">Mis Accesorios</a></li>
+                      <li><a href="#"></a></li> -->
+                  </ul>
+
+              </div>
+              <div class="col_1">
+
+                <!--  <h3>Useful Links</h3>-->
+                  <ul>
+                      <!--LINEA VERTICAL-->
+                      <!--<div class="vertical_line" style="height: 40px;">
+
+                      </div> -->
+                      <li><a href="#">Mis Accesorios</a></li>
+                      <hr/>
+                      <li><a href="#">Mi Maquillaje</a></li>
+                      <hr/>
+                      <li><a href="#">Salud</a></li>
+                      <!--<li><a href="#">PhotoTuts</a></li>
+                      <li><a href="#">ActiveTuts</a></li> -->
+                  </ul>
+
+              </div>
+          </div><!-- End 4 columns container -->
+
+      </li><!-- End 4 columns Item -->
+
+      <li class="submenu"><a href="#" class="drop">ENTRETENIMIENTO<span class="icon-down-open"></span></a><!-- Begin 4 columns Item -->
+
+        <div class="dropdown_41columns"><!-- Begin 4 columns container -->
+          <div class="col_1">
+
+            <!--  <h3>Some Links</h3> -->
+              <ul>
+                  <li><a href="#">Mis Viajes</a></li>
+                  <hr/>
+                  <li><a href="#">Mi Rumba</a></li>
+                  <hr/>
+                  <li><a href="#">Mi Cena</a></li>
+                  <hr/>
+                  <li><a href="#">Mis Ambientes</a></li>
+                  <!--<li><a href="#">3DOcean</a></li>-->
+              </ul>
+
+          </div>
+      </div><!-- End 4 columns container -->
+
+  </li><!-- End 4 columns Item -->
+  <li><a href="#" class="drop">CONTÁCTANOS</a><!-- Begin 4 columns Item -->
+
+  </li><!-- End 4 columns Item -->
+  <!---------------------------------------------------->
+<div class="menu_right">
+  <li><a href="#" class="drop">REGISTRARSE</a>
+
+  </li>
+
+  <li><a href="#" class="drop">INGRESAR</a><!-- Begin 3 columns Item -->
+
+  </li><!-- End 3 columns Item -->
+</div>
+
+
+</ul>
+
+        <div class="bannersmain bannercentral">
+            <br/>
+            <br/>
+            <!-- logo en el banners -->
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <!--animate.css exportado
+                    <img class="wow fadeInUp" style="width: 80%; margin-left: 10%;" src="http://mis15productions.com/wp-content/uploads/2017/02/S-mis15.png">-->
+                    <!--  <img class="wow fadeInUp" style="width: 80%; margin-left: 10%;" src="Logopit_1524589675618.png">
+-->
+
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <!--Espacio para ver el menu con todos sus items-->
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+            <div class="row">
+                <div class="col"></div>
+
+                <div class="col" style="text-align: right;">
+
+                    <!-- Cuadro en el banners -->
+                    <div class="box1banner">
+                      <br/>
+
+                  <!-- <p class="boxdescription">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                    </p> -->
+                    </div>
+                    <!-- Button ver mas-->
+
+                    <br/>
+                     <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+
+
+            <div class="movebanneboton">
+            <button class="botonVerde wow bounceIn">Ver más</button>
+            </div>
+
+
+
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+
+        </div>
+        <!--fin de body 1-->
+        <!--body 1.1-->
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <div class="row" id="menu">
+            <div class="col" style="text-align: center;">
+                <h1 class="titulos"><b>Tu Fiesta</b></h1>
+            </div>
+        </div>
+        <!--Fila 2-->
+<hr>
+        <div class="row">
+          <div class="col" style="text-align: center;">
+
+                    <!--Fila 2-->
+                    <div class="row">
+                        <div class="col" style="padding: 0px 60px 0px 60px;">
+                            <div class="row">
+
+                                <div class="col bannersmain imagenmn1" style="padding: 0;">
+                                  <br/>
+                                  <br/>
+                                  <br/>
+                                  <h4 style="color: white;"><b>Vestidos</b></h4>
+                                  <p style="color: white; font-size: 16px;">
+                                  </p>
+                                </div>
+
+                                <div class="col bannersmain imagenmn2">
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <h4 style="color: white;"><b>Zapatos</b></h4>
+                                    <p style="color: white; font-size: 16px;">
+                                    </p>
+
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <!-- Iconos de ubicacion -->
+
+                                </div>
+                                <div class="col bannersmain imagenmn3" style="padding: 0;">
+                                  <br/>
+                                  <br/>
+                                  <br/>
+                                  <h4 style="color: white;"><b>Recepciones</b></h4>
+                                  <p style="color: white; font-size: 16px;">
+                                  </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Fin de Fila 3-->
+          </div>
+
+        </div>
+        <!--Fila 3-->
+
+          <div class="row">
+            <div class="col" style="text-align: center;">
+                      <br/>
+                      <br/>
+                      <br/>
+                      <!--Fila 3-->
+                      <div class="row">
+                          <div class="col" style="padding: 0px 60px 0px 60px;">
+                              <div class="row">
+
+                                  <div class="col bannersmain imagenmn4" style="padding: 0;">
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <h4 style="color: white;"><b>Maquillaje</b></h4>
+                                    <p style="color: white; font-size: 16px;">
+                                    </p>
+                                  </div>
+
+                                  <div class="col bannersmain imagenmn5">
+                                      <br/>
+                                      <br/>
+                                      <br/>
+                                      <h4 style="color: white;"><b>Fotografia</b></h4>
+                                      <p style="color: white; font-size: 16px;">
+                                      </p>
+
+                                      <br/>
+                                      <br/>
+                                      <br/>
+                                      <!-- Iconos de ubicacion -->
+
+                                  </div>
+                                  <div class="col bannersmain imagenmn6" style="padding: 0;">
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <h4 style="color: white;"><b>Protocolo</b></h4>
+                                    <p style="color: white; font-size: 16px;">
+                                    </p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <!--Fin de Fila 3-->
+            </div>
+
+          </div>
+
+
+
+
+
+
+        <!-- body 2-->
+        <div class="backgroundblanco">
+            <br/>
+            <br/>
+            <br/>
+            <!--Contenido 3 col-->
+            <div class="contenidonosotros">
+              <div class="row" id="nosotros">
+                <!--  <div class="col">
+                </div> -->
+
+                  <div class="col">
+                      <h1 class="titulopf1"><b>Lorem ipsum</b></h1>
+                      <p class="subtitulopf1"><b>Lorem ipsum dolor sit amet</b></p>
+                      <p class="pf1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+                  <div class="col">
+                  <h1 class="titulopf1"><b>Lorem ipsum</b></h1>
+                  <p class="subtitulopf1"><b>Lorem ipsum dolor sit amet</b></p>
+                  <p class="pf1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+                  <div class="col">
+                    <h1 class="titulopf1"><b>Lorem ipsum</b></h1>
+                    <p class="subtitulopf1"><b>Lorem ipsum dolor sit amet</b></p>
+                    <p class="pf1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  </div>
+              </div>
+
+            </div>
+            <!--findecontenidonodotros-->
+
+            <br/>
+            <br/>
+            <!-- Body 2.1-->
+            <div class="row" id="menu">
+                <div class="col" style="text-align: center;">
+
+                    <h1 class="titulos"><b>Lorem ipsum</b></h1>
+                </div>
+
+            </div>
+            <hr>
+            <!--Fila 1-->
+            <div class="row">
+                <!--Imagen 1-->
+                <div class="col" style="padding: 0;">
+                    <div class="bannersmain imagen1" style="text-align: center; padding-top: 250px;">
+                        <button class="botonVerde wow bounceIn">Sala de fiesta</button>
+                        <br/>
+                        <br/>
+                    </div>
+                </div>
+                <!-- Imagen 2 -->
+                <div class="col" style="padding: 0;">
+                    <div class="bannersmain imagen2" style="text-align: center; padding-top: 250px;">
+                        <button class="botonVerde wow bounceIn">Portadas</button>
+                        <br/>
+                        <br/>
+                    </div>
+                </div>
+                <!-- Imagen 3 -->
+                <div class="col" style="padding: 0;">
+                    <div class="bannersmain imagen3" style="text-align: center; padding-top: 250px;">
+                        <button class="botonVerde wow bounceIn">Makeup</button>
+                        <br/>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+            <!--Fin de Fila 1-->
+            <!-- Fin Body 2.1-->
+
+            <!-- Body 2.2 -->
+
+            <div class="row" id="blog">
+                <div class="col" style="text-align: center;">
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    <h1 class="titulos"><b>Lorem ipsum</b></h1>
+                    <hr>
+                    <br/>
+
+
+                  <!--Nuevo Slide-->
+
+                  <div id="myCarousel" class="carousel slide myCarousel" data-interval="false" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                      <li data-target="#myCarousel" data-slide-to="2"></li>
+                      <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                      <div class="active item">
+                        <!--primera imagen-->
+                        <img src="images/slider.JPG" style="width:100%; height:500px;" alt="...">
+                          <div class="container">
+                          <div class="carousel-caption">
+                          <!--  <h3>Primer imagen</h3> -->
+                            <p>Lorem ipsum 1</p>
+                          </div>
+                          </div>
+                      </div>
+                      <div class="item">
+                        <img src="images/slider_1.jpg" style="width:100%; height:500px;" alt="...">
+                          <div class="container">
+                          <div class="carousel-caption">
+                          <!--  <h3>Segunda imagen</h3> -->
+                            <p>Lorem ipsum 2</p>
+                          </div>
+                          </div>
+                      </div>
+                      <div class="item">
+                        <img src="images/slider_2.jpg" style="width:100%; height:500px;" alt="...">
+                          <div class="container">
+                          <div class="carousel-caption">
+                          <!--  <h3>Third slide label</h3> -->
+                            <p>Lorem ipsum 3</p>
+                          </div>
+                          </div>
+                      </div>
+                      <div class="item">
+                        <img src="images/slider_3.jpg" style="width:100%; height:500px;" alt="...">
+                          <div class="container">
+                          <div class="carousel-caption">
+                          <!--  <h3>Third slide label</h3> -->
+                            <p>Lorem ipsum 4</p>
+                          </div>
+                          </div>
+                      </div>
+                    </div>
+                    <hr class="transition-timer-carousel-progress-bar" />
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                    <!--  <center>
+                        <h2>Bootstrap 3 Carousel With Progress Bar</h2>
+                        <h3>A pen by Eduardo Gomes (elgsantos)</h3>
+                        <h4>Code also on Github: https://gist.github.com/elgsantos/5ff76405f52d33715ffa</h4>
+                      </center> -->
+
+
+
+                    <!--Fila 2-->
+                  <!--  <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8" style="padding: 0;">
+                            <div class="row">
+                                <div class="col bannersmain imagesdetails" style="padding: 0;"></div>
+                                <div class="col fondoRosa">
+                                    <br/>
+                                    <br/>
+                                    <h4 style="color: white;"><b>Lorem ipsum dolor sit amet</b></h4>
+                                    <p style="color: white; font-size: 12px;">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <b>ameit ameit</b>.</p>
+                                    <p style="color: white; font-size: 14px;">Aquí encontrarás inspiración suficiente para cada día del mes de abril lucir una elegante manicura de temporada. ¡Inspirate a hacer...</p>
+                                    <button class="botonVerde wow bounceIn">Ver más</button>
+                                    <br/>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div> -->
+                    <!--Fin de Fila 2-->
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+            <!--Fin body 2.2-->
+            <!--body 2.3-->
+            <div class="row" id="locaciones">
+                <div class="col" style="text-align: center;">
+
+                    <br/>
+                    <h1 class="titulos"><b>Comparte y disfruta</b></h1>
+                    <br/>
+                    <hr>
+                    <!--Fila 3-->
+                    <div class="row">
+                        <div class="col" style="padding: 0;">
+                            <div class="row">
+
+                                <div class="col bannersmain imagen4" style="padding: 0;"></div>
+                                <div class="col bannersmain imagen5">
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <h4 style="color: white;"><b>Contáctanos</b></h4>
+                                    <p style="color: white; font-size: 16px;">
+                                        Calle 75 b 94A 25<br/>
+                                        Bogotá, Colombia<br/>
+                                        57 1 300 310 5902<br/>
+                                    </p>
+                                    <button class="botonRosa wow bounceIn">Ver mapa</button>
+                                    <br/>
+                                    <br/>
+                                    <!-- Iconos de ubicacion -->
+                                    <div style="text-align: center;">
+                                        <span class="fa fa-map iconoSocial2"></span>
+                                        <span class="fa fa-map-marker iconoSocial2"></span>
+                                        <span class="fa fa-street-view iconoSocial2"></span>
+                                    </div>
+                                    <br/>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Fin de Fila 3-->
+                </div>
+            </div>
+            <!--Fin body 2.3-->
+        </div>
+        <!--Footer-->
+        <div class="fondoNegro">
+            <!-- Logo -->
+            <div class="row" style="padding-top: 30px;">
+                <div class="col" style="text-align: left;">
+                    <!--<img class="wow fadeInUp" style="width: 150px;" src="http://mis15productions.com/wp-content/uploads/2017/02/LOGOS-mis15.png">
+                -->
+                  <img class="wow fadeInUp" style="width: 250px;" src="Logopit.png">
+              </div>
+            </div>
+            <br/>
+            <!-- Suscríbete -->
+            <div class="row">
+                <div class="col" style="text-align: center">
+                    <h4 style="color: white;"><b>Suscríbete</b></h4>
+                    <p style="color: white; font-size: 12px;">Recibe invitaciones, noticias y promociones.</p>
+                    <div class="row">
+                        <div class="col" style="text-align: center;">
+                          <a href="index_login.html">Suscribete aquí!</a>
+                          <!--  <input type="text" placeholder="example@email.com">
+                            <button class="wow bounceIn botonRosa">Enviar</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="row">
+                <!-- Redes sociales-->
+                <div class="col" style="text-align: center;">
+                    <span class="fa fa-facebook iconoSocial"></span>
+                    <span class="fa fa-twitter iconoSocial"></span>
+                    <span class="fa fa-instagram iconoSocial"></span>
+                </div>
+                <!-- Tarjetas de pago -->
+                <div class="col" style="text-align: center;">
+                    <span class="fa fa-cc-mastercard iconoSocial"></span>
+                    <span class="fa fa-cc-paypal iconoSocial"></span>
+                    <span class="fa fa-cc-visa iconoSocial"></span>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <!-- Copyright -->
+            <p style="color: white; font-size: 10px; text-align: center;">SOBRE NOSOTROS | CONDICIONES DE USO | POLÍTICA DE PRIVACIDAD | @ Copyright 2018 - 2020</p>
+            <br/>
+            <br/>
+        </div>
+        <script src="menu.js">
+
+        </script>
+    </body>
+</html>
+<!--<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet">
+
+    <title>Page</title>
+  </head>
+  <body>
+    <header>
+
+   <div class="container">
+     <div class="logo">
+       <h1 id="logo">BannerDivs.</h1>
+     </div>
+     <nav>
+       <ul>
+         <li><a href="#">Lorem</a></li>
+         <li><a href="#">Lorem</a></li>
+         <li><a href="#">Lorem</a></li>
+         <li><a href="#">Lorem</a></li>
+         <li><a href="#">Lorem</a></li>
+         <li><a href="#">Lorem</a></li>
+       </ul>
+     </nav>
+   </div>
+    </header>
+  </body>
+</html> -->
